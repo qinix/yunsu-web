@@ -1,0 +1,98 @@
+<!-- Pricing Tables / Srart -->
+<section id="pricing-tables" style="padding-top:30px">
+
+	<!-- 3 Tables -->
+	<div class="container">				
+		<div class="row">		
+			<div class="standard plan one-fourth column">
+				<form method="GET" action="/user/buy/1">
+					<h3><strong>标准 套餐</strong></h3>
+					<div class="plan-price">
+						<span class="value">￥10 <small>/ 月</small></span>
+					</div>
+					<div class="plan-features">
+						<ul>
+							<li>每自然月 <strong>10GB</strong> 流量</li>
+							<li>Windows、Mac、iOS、Android</li>
+							<li>最多支持3台设备同时使用</li>
+							<li>多个高速线路自由（自动）切换</li>
+							<li>技术支持服务</li>
+						</ul>
+						<% unless current_user && current_user.plan_id > 1 %>
+						<center>
+							<div class="ppbuy">
+								<select name="time">
+									<option value="1mo">购买一个月 ¥ 10.00</option>
+									<option value="3mo">购买三个月 ¥ 30.00</option>
+									<option value="1ye">购买一年 ¥ 100.00</option>
+								</select>
+							</div>
+						</center>
+						<% end %>
+						<center style="margin-top: 20px;"><input type="submit" class="btn btn-large btn-block btn-primary" name="submit" value="<%= if current_user && current_user.plan_id > 1 then '降级' elsif current_user && current_user.plan_id == 1 then '续费' else '购买' end %>" /></center>
+					</div>
+				</form>
+			</div>
+				
+			<div class="standard plan one-fourth column">
+				<form method="GET" action="/user/buy/2">
+					<h3><strong>高级 套餐</strong></h3>
+					<div class="plan-price"><span class="value">￥15 <small>/ 月</small></span></div>
+					<div class="plan-features">
+						<ul>
+							<li>每自然月 <strong>25GB</strong> 流量</li>
+							<li>Windows、Mac、iOS、Android</li>
+							<li>最多支持4台设备同时使用</li>
+							<li>多个高速线路自由（自动）切换</li>
+							<li>技术支持服务</li>
+						</ul>
+						<% unless (current_user && current_user.plan_id > 2) || (current_user && current_user.plan_id < 2 && current_user.plan_id != 0) %>
+						<center>
+							<div class="ppbuy">
+								<select name="time">
+									<option value="1mo">购买一个月 ¥ 15.00</option>
+									<option value="3mo">购买三个月 ¥ 45.00</option>
+									<option value="1ye">购买一年 ¥ 150.00</option>
+								</select>
+							</div>
+						</center>
+						<% end %>
+						<center style="margin-top: 20px;"><input type="submit" class="btn btn-large btn-block btn-primary" name="submit" value="<%= if current_user && current_user.plan_id > 2 then '降级' elsif current_user && current_user.plan_id == 2 then '续费' elsif current_user && current_user.plan_id < 2 && current_user.plan_id != 0 then '升级' else '购买' end %>" /></center>
+					</div>
+				</form>
+			</div>
+				
+			<div class="ultimate plan one-fourth column">
+				<form method="GET" action="/user/buy/3">
+					<h3><strong>超级 套餐</strong></h3>
+					<div class="plan-price"><span class="value">￥25 <small>/ 月</small></span></div>
+					<div class="plan-features">
+						<ul>
+							<li>每自然月 <strong>50GB</strong> 流量</li>
+							<li>Windows、Mac、iOS、Android</li>
+							<li>最多支持5台设备同时使用</li>
+							<li>多个高速线路自由（自动）切换</li>
+							<li>技术支持服务</li>
+						</ul>
+						<% unless current_user && current_user.plan_id < 3 && current_user.plan_id != 0 %>
+						<center>
+							<div class="ppbuy">
+								<select name="time">
+									<option value="1mo">购买一个月 ¥ 25.00</option>
+									<option value="3mo">购买三个月 ¥ 75.00</option>
+									<option value="1ye">购买一年 ¥ 250.00</option>
+								</select>
+							</div>
+						</center>
+						<% end %>
+						<center style="margin-top: 20px;">
+							<input type="submit" class="btn btn-large btn-block btn-primary" name="submit" value="<%= if current_user && current_user.plan_id == 3 then '续费' elsif current_user && current_user.plan_id < 3 && current_user.plan_id != 0 then '升级' else '购买' end %>" />
+						</center>
+					</div>
+				</form>
+			</div>
+					
+		</div><!-- / Row -->
+	</div><!-- / Container -->
+</section>
+<!-- Pricing Tables / End -->

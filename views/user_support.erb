@@ -1,0 +1,22 @@
+<section>
+  <div class="container">
+		<div class="sixteen columns"><div class="separator nb"><h3>技术支持</h3></div></div>
+		<div style="font-size:15px;font-weight:bold;">如果你遇到问题，请通过填写下方的表单告诉我们，我们将尽快回复你。</div>
+		<br/>
+
+		<div class="form">		
+			<form class="clearfix" method="post" action="/user/support" enctype="multipart/form-data">
+				<div class="field">
+					<input type="text" name="email" placeholder="输入你的E-Mail" class="text" value="" style="height:26px"/>
+				</div>						
+				<textarea name="message"  placeholder="告诉我们你所遇到的问题，请务必清楚详细的描述你的问题，以及操作步骤，否则我们可能无法帮到你。比如：我是Windows系统，使用的yunsu-web.herokuapp的客户端，无法打开youtube网站，会提示cow proxy error。截图如下。" class="text"></textarea>
+				<div style="position:relative;margin-top:10px">
+					<input type="file" name="uni_file" class="uni_style" size="19" accept="image/*" style="line-height:0">
+					<div style="position:absolute;clear:both;top:5px;left:250px;cursor:default;font-size:13px;color:#999">允许的图片：JPG/PNG/GIF，1MB以内</div>
+				</div>				
+				<div style="float:right;margin-right:316px"><button id="send" class="btn btn-primary btn-large btn-block" style="width:150px !important;">提交</button></div>					
+			</form>				
+		</div>
+	</div>
+</section>
+<!-- support / End -->

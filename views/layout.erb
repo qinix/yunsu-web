@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="zh_CN"><!--<![endif]-->
+<head>
+	<!-- Basic Page Needs -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><%= if @title then @title + " | " else "" end %>云速 - 开阔视界，即刻到来</title>	
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="Vena Template by Nevide" />
+	<meta name="author" content="Nevide" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<!-- Style Files -->
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/colors/1.css" id="color" />
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!-- jQuery library -->
+	<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+	<!-- Scripts -->
+	<script type="text/javascript" src="/js/jquery.jcarousel.js"></script>
+	<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="/js/jquery.themepunch.plugins.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.quovolver.js"></script>
+	<script type="text/javascript" src="/js/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.tooltipster.js"></script>
+	<script type="text/javascript" src="/js/jquery.jpanelmenu.js"></script>
+	<script type="text/javascript" src="/js/jquery.swipebox.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/retina.js"></script>
+	<script type="text/javascript" src="/js/custom.js"></script>
+	<script type="text/javascript" src="/js/switcher.js"></script>
+</head>
+<body>
+
+<!-- Main Menu / Start -->
+<header class="menu">
+	<div class="container">
+		<!-- Mobile Only Menu Button -->
+		<a href="#menu" class="menu-trigger"><i class="icon-reorder"></i></a>
+		<!-- Logo  -->	
+		<a class="logo" href="/"><img src="/images/logo.png" alt="云速 - 开阔视界，即刻到来" title="云速 - 开阔视界，即刻到来" /></a>
+		<!-- Navigation -->		
+		<nav>
+			<ul class="navigation">
+				<li class="current"><a href="/">首页</a></li>
+				<li><a href="/faq">常见问题</a></li>
+				<li><a href="/plan">选择套餐</a></li>
+				<% if logged_in? %>
+				<li><a href="/user">我的账户</a></li>
+				<% if admin? %>
+				<li><a href="/admin">管理员后台</a></li>
+				<% end %>
+				<li><a href="/logout">登出</a></li>
+				<% else %>
+				<li><a href="/login">登录 / 注册</a></li>
+				<% end %>
+			</ul>
+		</nav>
+	</div><!-- End of container -->
+</header>
+<!-- Main Menu / End -->
+
+<% if @user_space %>
+<!-- userinfo / Srart -->
+<header class="columns" style="padding-top:30px">
+	<div class="container">
+		<a href="/user" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold"><i class="icon-star"></i>我的套餐</div></a>
+		<a href="/user/tutorial" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold"><i class="icon-cog"></i>使用方法</div></a>
+		<a href="/user/aff" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold"><i class="icon-group"></i>推荐计划</div></a>
+		<a href="/user/settings" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold"><i class="icon-tasks"></i>账户安全</div></a>
+		<a href="/user/support" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold"><i class="icon-question-sign"></i>技术支持</div></a>
+  </div>
+</header>
+<!-- userinfo / End -->
+<% end %>
+
+<% if @admin_space %>
+<!-- adm / Srart -->
+<header class="columns" style="padding-top:30px">
+	<div class="container">
+		<a href="/admin" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold">统计</div></a>
+		<a href="/admin/user" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold">用户管理</div></a>
+		<a href="/admin/product" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold">产品管理</div></a>
+		<a href="/admin/server" ><div class="four columns fill afff" style="font-size:17px;font-weight:bold">线路管理</div></a>
+	</div>
+</header>
+<!-- adm / End -->
+<% end %>
+
+<% if flash[:error] %>
+	<div class="container">
+		<div class="alert error">
+			<div class="close">×</div>
+			<p><%= flash[:error] %></p>
+		</div>
+	</div>
+<% elsif flash[:success] %>
+	<div class="container">
+		<div class="alert success">
+			<div class="close">×</div>
+			<p><%= flash[:success] %></p>
+		</div>
+	</div>
+<% end %>
+
+<%= yield %>
+
+<!-- Footer / Start -->
+<footer>	
+	<section class="footer-bar">
+		<div class="container">
+			<div class="eight columns">
+				<div class="footer-logo">
+					<span>2013 © 云速 Copyright. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/about">关于云速</a> &nbsp;|&nbsp; <a href="/status">服务状态查询</a> &nbsp;|&nbsp; </span>
+				</div>
+			</div>				
+		</div>
+	</section>
+</footer>
+<!-- Footer / End -->
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<section>
+  <div class="container">
+		<div class="sixteen columns"><div class="separator nb"><h3>用户资料列表</h3></div></div>
+		
+		<form method="post" action="">
+			<div class="search-icon">
+				<input type="text" name="search" class="searching" style="width:328px;border: 1px solid #bdc3c7;padding-left:10px;float:left" placeholder="搜索用户名……">
+				<input type="submit" value="搜 索" name="turn2edit" class="btn btn-primary btn-block" style="font-size:17px;font-weight:bold;width:200px;height:39px;font-family:Lato, Microsoft YaHei, sans-serif;cursor:pointer;float:left;margin-left:20px"/>
+			</div>
+		</form>
+		<div class="clear"></div>
+		<br/>
+
+		<table class="default-table">
+			<tr>
+				<th>用户名</th>
+				<th>管理</th>
+			</tr>
+			<% @users.each do |u| %>
+			<tr>
+				<td><%= u.email %></td>
+				<td><a href="/admin/user/<%= u.id %>">编辑资料</a></td>
+			</tr>
+			<% end %>
+		</table>
+		
+		<%= paginate User %>
+		
+	</div>
+</section>
+<!-- myinfo / End -->

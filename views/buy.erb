@@ -1,0 +1,57 @@
+<!-- Pricing Tables / Srart -->
+<section id="pricing-tables">
+
+	<!-- 3 Tables -->
+	<div class="container">		
+		<div class="sixteen columns"><div class="separator nb"><h2>确认订单并支付</h2></div></div>
+		<h3 style="line-height:24px">付款后将立即自动为您开通相应的套餐，无需等待！</h3>
+		<h3 style="line-height:24px">套餐到期前记得续费您的套餐，以便在未来继续享受云速带来的高质量服务！</h3>
+		<h3 style="line-height:24px">您还可以升级套餐，只需支付差价即可。</h3>
+		<h3 style="line-height:24px">升级套餐可以获取更多的流量，以及让您的更多设备能同时使用，为您和您的亲友带来无拘无束的上网服务！</h3>
+		<br/>
+		<div class="buy_list">
+			<div class="jieshao">套餐</div>
+			<div class="contt"><span class="label"><%= @subject %></span></div>
+		</div>
+
+		<div class="buy_list">
+			<div class="jieshao">购买时间</div>
+			<div class="contt"><span class="label"><%= sprintf("%.2f", @month) %> 个月</span></div>
+		</div>
+
+		<div class="buy_list">
+			<div class="jieshao">合计付款金额</div>
+			<div class="contt"><span class="label">￥ <%= @price %></span></div>
+		</div>
+
+		<div class="buy_list" style="border-bottom: 1px solid #eee;margin-bottom:20px">
+			<div class="jieshao">付款方式</div>
+			<div class="contt"><span class="label">支付宝</span></div>
+		</div>
+
+		<p><label class="checkbox" for="accept_tos"><input id="accept_tos" name="okxieyi" type="checkbox" value="0"><span>我已阅读并同意 <a href="/tops" target="_blank">服务协议</a></span></label></p>
+
+		<br/>
+		
+		<style type="text/css">
+			#afff-submit:disabled, #afff-submit[disabled]{background:#A5A5A5}
+		</style>
+		<script type="text/javascript">
+			$("#accept_tos").change(function(){
+				if( $(this).is(':checked') ){
+					$("#afff-submit").removeAttr("disabled")
+				}else{
+					$("#afff-submit").attr("disabled", "disabled")
+				}
+			});
+		</script>
+		<form method="POST">
+			<div style="float:left;padding-top:8px">优惠码：</div>
+			<input type="text" name="coupon" style="border:1px solid #bdc3c7;width:300px;float:left;margin-right:20px">
+			<input id="afff-submit" type="submit" name="submit" disabled="disabled" class="btn btn-primary btn-block" style="font-size:17px;font-weight:bold;width:220px;font-family:Lato, Microsoft YaHei, sans-serif;cursor:pointer;float:right;" value="确定并支付">
+		</form>
+
+	</div><!-- / Container -->
+	
+</section>
+<!-- Pricing Tables / End -->

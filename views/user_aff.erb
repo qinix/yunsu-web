@@ -1,0 +1,33 @@
+<section>
+  <div class="container">
+		<div class="sixteen columns" style="margin-left:0"><div class="separator nb"><h3>把云速推荐给你的朋友!</h3></div></div>
+
+		<div style="font-size:15px;font-weight:bold;">独乐乐不如众乐乐，将下面的链接发给你的朋友们，当有人从此链接购买云速，您将获得免费的使用时间。</div>
+		<p style="margin:20px 0;line-height:20px">
+			当他购买<b>一个月</b>，你将获得<b>一个星期</b>的免费使用时间；<br/>
+			当他购买<b>三个月</b>，你将获得<b>三个星期</b>的免费使用时间；<br/>
+			当他购买<b>一年</b>，你将获得<b>一个月的</b>免费使用时间。
+		</p>
+		
+		<div style="font-size:17px;font-weight:bold;border-top:1px dotted #EBEBEB;border-bottom:1px dotted #EBEBEB;padding:15px 0;margin:20px 0">你的推荐连接：<a href="http://yunsu-web.herokuapp.com/?r=<%= current_user.id %>" target="_blank">http://yunsu-web.herokuapp.com/?r=<%= current_user.id %></a></div>
+		
+    <h3 style="margin-bottom:20px">统计：你总计获得的免费使用时间为 <%= @aff_days %> 天！</h3>
+
+		<table class="default-table">				
+			<tr>
+				<th>购买者</th>
+				<th>选购的套餐</th>
+				<th>你获得的时间</th>
+			</tr>
+      <% @invites.each do |i| %>
+			  <tr>
+          <td><%= i.invited_user.email %></td>
+          <td><%= i.invited_user.plan.name %></td>					
+          <td><%= i.reward_days %>天</td>					
+			  </tr>
+      <% end %>
+		</table>
+
+	</div>
+</section>
+<!-- aff End -->

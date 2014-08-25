@@ -1,0 +1,32 @@
+<!-- Login/ Srart -->
+<style type="text/css">
+	.alert{margin:30px auto 0 auto}
+</style>
+<section class="about" style="padding-top:30px">
+	<div class="container contcenter">
+		<h2>登录到云速</h2>
+		<p class="bigger"></p>
+	</div>	
+	<div class="container">	
+		<form method="POST" action="/login">
+			<div class="login-form">
+				<div class="control-group">
+					<p>E-Mail 地址</p>
+					<input type="text" class="login-field" value="" placeholder="" name="email" />
+					<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+					<p>密 码</p>	
+					<input type="password" class="login-field" value="" placeholder="" name="password" />
+					<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+				<input type="submit" value="登录" class="widthfull btn btn-primary btn-large btn-block" style="margin-top:10px;" />
+				<a class="widthfull btn btn-large btn-block btn-inverse" style="margin-top:10px;" href="/signup">我要注册</a>
+				<a class="login-link" href="/forget_pass">忘记密码了吗？</a>
+			</div>      
+		</form>
+	</div>
+</section>
+<!-- Login / End -->

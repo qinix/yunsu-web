@@ -1,0 +1,32 @@
+<section>
+  <div class="container">
+		<div class="sixteen columns"><div class="separator nb"><h3>编辑用户资料</h3></div></div>
+		<div class="clear"></div>
+		
+		<form id="serviceform" name="serviceform" action="" method="post">
+			<table class="default-table">
+				<tr>
+					<th>电子邮件</th>
+					<th>套餐到期时间</th>
+					<th>套餐名称</th>					
+				</tr>
+				<tr>					
+					<td width="30%"><%= @u.email %></td>
+					<td width="40%"><input type="text" value="<%= @u.deadline %>" name="deadline" style="display:inline-block;border-radius:0;width:240px;height:17px;border:1px solid #CCCCCC;padding-left:10px" /></td>
+					<td width="40%">
+						<div class="ppbuy" style="margin:0">
+							<select name="plan">
+                <option value="0" <%= 'selected="selected"' if @u.plan_id == 0 %>>无套餐</option>
+								<option value="1" <%= 'selected="selected"' if @u.plan_id == 1 %>>标准</option>
+								<option value="2" <%= 'selected="selected"' if @u.plan_id == 2 %>>高级</option>
+								<option value="3" <%= 'selected="selected"' if @u.plan_id == 3 %>>超级</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" name="submit" class="btn btn-primary" value="确定" style="float:right;width:200px;font-weight:bold">
+		</form>
+	</div>
+</section>
+<!-- myinfo / End -->

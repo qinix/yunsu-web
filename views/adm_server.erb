@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+		<div class="sixteen columns"><div class="separator nb"><h3>线路查看与管理</h3></div></div><br/>
+
+		<table class="default-table">
+			<tr>
+				<th>线路域名</th>
+				<th>是否连通</th>
+			</tr>
+			<% @servers.each do |s| %>
+			<tr>
+				<td><%= s.server_name %></td>
+				<td><b style="color:<%= if s.normal? then 'green' else 'red' end %>"><%= if s.normal? then '正常' else '警告' end %></b></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</section>
+<!-- myinfo / End -->

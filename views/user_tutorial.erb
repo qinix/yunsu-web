@@ -1,0 +1,42 @@
+<section>
+  <div class="container">
+		<div class="sixteen columns"><div class="separator nb"><h3>请根据你的需要查看不同设备上的使用方法</h3></div></div>
+		<% if not @buyed %>
+			<div class="alert success" style="margin-bottom:10px;float: left;">
+				<div class="close">×</div>
+				<p>你还没有订购任何套餐，现在 <a href="/plan">立即购买</a></p>
+			</div>
+		<% else %>
+			<div class="eight columns">	
+				<div id="tabs_container">
+					<ul id="tabs">
+						<li class="active"><a href="#tab1">Windows</a></li>
+						<li><a href="#tab2">Mac OSX</a></li>
+						<li><a href="#tab3">iOS</a></li>
+						<li><a href="#tab4">Android</a></li>
+					</ul>
+				</div>				
+				<div id="tabs_content_container">
+					<div id="tab1" class="tab_content" style="display: block;">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit.
+						Quem appellantur est an, vim at dicant gubergren. Solum iuvaret dignissim at usu, nusquam antiopam eam ut.</p>
+					</div>
+
+					<div id="tab2" class="tab_content">
+						<p>Nec sensibus reprimique definitiones ea. Simul quaerendum ut usu, an pro meliore antiopam senserit, ex atqui bonorum albucius cum.
+						Usu justo efficiantur ne, et quo alia simul viris, ad vitae delectus torquatos qui. Te tempor officiis ius, nec purto labore eleifend ei.</p>
+					</div>
+
+					<div id="tab3" class="tab_content">
+						<p>精彩敬请期待！</p>
+					</div>
+
+					<div id="tab4" class="tab_content">
+						<p>精彩敬请期待！</p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</section>
+<!-- tutorial / End -->

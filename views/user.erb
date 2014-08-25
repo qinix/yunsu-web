@@ -1,0 +1,33 @@
+<section>
+  <div class="container">
+		<% if !@has_plan %>
+			<div class="sixteen columns"><div class="separator nb"><h3>查看你的套餐信息，或者进行变更</h3></div></div>
+			<div class="alert success" style="margin-bottom:10px;float: left;">
+				<div class="close">×</div>
+				<p>你还没有订购任何套餐，现在 <a href="/plan">立即购买</a></p>
+			</div>
+		<% else %>
+
+			<table class="default-table">
+				<tr>
+					<th>套餐</th>
+					<th>状态</th>
+					<th>本月已使用流量</th>
+					<th>有效时间</th>
+					<th>续费</th>
+				</tr>
+				<tr>
+					<td><%= @user.plan.name %></td>
+					<td><% if @user.available %><i class="icon-ok-sign"></i> 可用<% else %><i class="icon-remove-sign"></i> 不可用<% end %></td>
+					<td><%= "#{@user.used_traffic_h} / #{@user.traffic_h}" %></td>
+					<td><%= sprintf("至 %d 年 %d 月 %d 日", @user.deadline.year, @user.deadline.month, @user.deadline.day) %></td>					
+					<td><a href="/plan">点击进行续费</a></td>
+				</tr>
+			</table>
+
+			<div class="sixteen columns"><div class="separator nb"><h4>变更为其他套餐</h4></div></div>
+			<a href="/plan" ><div class="four columns fill afff" style="font-size: 17px; font-weight: bold; margin:0 !important;">变更为其他套餐</div></a>
+		<% end %>
+	</div>
+</section>
+<!-- userinfo / End -->

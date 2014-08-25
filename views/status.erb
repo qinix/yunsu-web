@@ -1,0 +1,47 @@
+<!-- status / Srart -->
+<section class="about" style="padding-top:30px">
+
+	<div class="container">
+		<div class="eight columns">
+			<div class="meet-us">
+				<p class="bigger"><strong>云速不仅拥有稳定的网络速度，还采用了智能化的监控技术，一旦某个服务器出现故障（当然这种情况几乎不会发生），我们将第一时间收到通知并进行修复。</strong></p>
+			</div>
+		</div>		
+	</div>	
+	
+	<% if @normal %>
+		<div class="container">	
+			<div class="our-process">		
+				<div class="abfull">
+					<figure class="process">
+						<div>
+							<img src="images/icons/unused/status_ok.png" width="100px" height="100px" alt="" style="float:left;"/>
+						</div>
+						<div class="ma_left">
+							<h2>当前所有的服务都正常，尽情享用吧！</h2>
+							<p>服务状态更新间隔时间为2分钟，确保您能够随时获取服务状态的可用情况。</p>
+						</div>
+					</figure>
+				</div>
+			</div>
+		</div>
+	<% else %>	
+	<div class="container">		
+		<div class="our-process">			
+			<div class="abfull">
+				<figure class="process">
+					<div>
+						<img src="images/icons/unused/status_error.png" width="100px" height="100px" alt="" style="float:left;"/>
+					</div>
+					<div class="ma_left">
+						<h2>当前有一个小故障，但其他的线路仍然在正常运行！</h2>
+						<p>嘿，不用担心！你可以切换到其他线路，依旧可以正常使用。<br />我们已经收到系统通知，将以最快的速度修复出现故障的服务器。</p>
+					</div>
+				</figure>
+			</div>
+		</div>		
+	</div>
+  <% end %>
+
+</section>
+<!-- status / End -->
